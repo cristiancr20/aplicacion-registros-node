@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiante</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <%- include('./navbar.ejs')%>
+    <div class="container">
+        <div class="formulario">
+            <h4>Datos de Asignatura</h4>
+            <form action="/crearasignatura" method="POST">
+                <div class="inputs">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" class="form-control" required>
+                </div>
+                <div class="inputs">
+                    <label for="edad" class="form-label">Creditos</label>
+                    <input id="creditos" name="creditos" type="number" class="form-control" required>
+                </div>
+        </div>
+        <div class="boton">
+            <button type="submit"><i class="bi bi-save"></i>Registrar Carga</button>
+        </form>
+        </div>
+
+        <!-- Tabla Asignatura  -->
+        <table id="tablaAsignatura" class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Creditos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach( (data) => { %>
+                    <tr>
+                        
+                        <td><%= data.nombre %></td>
+                        <td><%= data.creditos %></td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    
+    </div>
+</body>
+
+</html>
