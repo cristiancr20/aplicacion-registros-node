@@ -1,11 +1,12 @@
-const mongoose = require ('mongoose')
+const mongoose = require('mongoose')
 
 const nuevoProfesor = mongoose.Schema({
-    id: String,
+    
     nombre: String,
-    apellido: String,
+    apellido:String,
     cedula: String,
-})
+    
+},{versionKey:false})
 
 
-module.exports = mongoose.model('profesor',nuevoProfesor)
+module.exports = mongoose.model('profesor', nuevoProfesor)

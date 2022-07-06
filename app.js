@@ -47,4 +47,5 @@ const profesor= require('./src/routes/routeProfesor')
 app.use(profesor)
 const asignatura= require('./src/routes/routeAsignatura')
 app.use(asignatura)
-
+const inicio = require('./src/routes/index')
+app.use(inicio)

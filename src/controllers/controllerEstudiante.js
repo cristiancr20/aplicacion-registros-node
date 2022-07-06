@@ -35,3 +35,35 @@ module.exports.registrar = (req, res) => {
         res.redirect('/listarestudiante');
     })
 }
+
+//editar
+exports.editar = (req,res)=>{
+    
+    const id=req.body.id_editar;
+    const nombre=req.body.nombre_editar;
+    const apellido = req.body.apellido_editar;
+    const cedula=req.body.cedula_editar;
+
+    console.log(id,nombre,apellido,cedula);
+    Estudiante.findByIdAndUpdate(id, {nombre,apellido,cedula},(error,data)=>{
+        if (error){
+            return res.status(500).json({
+                message:'Error updating',error
+            })
+        }
+        res.redirect('/listarestudiante')
+    }) 
+}
+
+//borrar
+exports.borrar = (req, res)=>{
+    const id = req.params._id
+    Estudiante.findByIdAndRemove(id, (error, data)=>{
+        if(error){
+            return res.status(500).json({
+                message: 'Error eliminando el Estudiante'
+            })
+        }
+        res.redirect('/listarestudiante')
+    })
+}

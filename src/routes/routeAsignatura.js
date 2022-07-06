@@ -2,10 +2,12 @@ const express = require('express');
 
 const router = express.Router();
 
-const { registrar, listar } = require('../controllers/controllerAsignatura')
+const { registrar, listarasig, editar, borrar } = require('../controllers/controllerAsignatura')
 
 router.post('/crearasignatura', registrar);
-router.get('/listarasignatura', listar);
+router.get('/listarasignatura', listarasig);
+router.post('/editarasignatura', editar);
+router.get('/borrarasignatura/:_id', borrar);
 
 
 module.exports = router;

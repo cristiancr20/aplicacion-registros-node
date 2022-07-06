@@ -1,10 +1,10 @@
 const mongoose = require ('mongoose')
 
 const nuevaAsignatura = mongoose.Schema({
-    id: String,
-    nombre: String,
-    creditos: String,
-})
+   
+    nombre:String,
+    creditos: String
+},{versionKey:false})
 
 
 module.exports = mongoose.model('Asignatura',nuevaAsignatura)
