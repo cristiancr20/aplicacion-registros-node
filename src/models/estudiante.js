@@ -5,6 +5,7 @@ const nuevoEstudiante = mongoose.Schema({
     nombre: String,
     apellido: String,
     cedula: String,
+    
 
 },{versionKey:false})
 

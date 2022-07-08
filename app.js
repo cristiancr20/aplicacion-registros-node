@@ -18,12 +18,6 @@ mongoose.connect(process.env.DATABASE, {
   console.log('connect')
 })
 
-//Rutas
-/* app.use('/service/auth', require('./src/routes/routeProfesor'));
-app.use('/service/auth', require('./src/routes/routeEstudiante'));
-app.use('/service/auth', require('./src/routes/routeAsignatura')); */
-
-
 
 
 const port = process.env.PORT;

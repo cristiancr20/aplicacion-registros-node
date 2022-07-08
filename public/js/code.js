@@ -1,5 +1,7 @@
 const modal = new bootstrap.Modal(document.getElementById('modal'))
+
 const on = (element, event, selector, handler) => {
+    console.log("hola");
     element.addEventListener(event, e => {
         if(e.target.closest(selector)){
             handler(e)

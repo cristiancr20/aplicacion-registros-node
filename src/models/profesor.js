@@ -6,6 +6,7 @@ const nuevoProfesor = mongoose.Schema({
     apellido:String,
     cedula: String,
     
+    
 },{versionKey:false})
 
 
